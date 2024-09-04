@@ -1,0 +1,13 @@
+{
+  "name": "encore-benchmark",
+  "private": true,
+  "version": "0.0.1",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "fastify": "^4.27.0"
+  }
+}
