@@ -4,9 +4,9 @@
 
 ### Methodology
 
-We benchmarked Encore, Bun, Fastify, and Express, both with and without schema validation.
+We benchmarked Encore, Bun, Fastify (v4 and v5), Express, Elysia, and Hono. All with and without schema validation.
 
-For schema validation we used Zod where possible. In the case of Fastify we used Ajv as the officially supported schema validation library.
+For schema validation we used Zod or TypeBox where possible. In the case of Fastify we used Ajv as the officially supported schema validation library.
 
 For each benchmark we took the best result of five runs. Each run was performed by making as many requests as possible with 150 concurrent workers, over 10s. The load generation was performed with [oha](https://github.com/hatoo/oha), a Rust and Tokio-based HTTP load testing tool.
 

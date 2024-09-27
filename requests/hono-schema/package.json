@@ -1,0 +1,14 @@
+{
+  "name": "hono",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts"
+  },
+  "dependencies": {
+    "@hono/typebox-validator": "^0.2.5",
+    "@sinclair/typebox": "^0.33.12",
+    "hono": "^4.6.3"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
