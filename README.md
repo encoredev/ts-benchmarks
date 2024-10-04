@@ -1,5 +1,8 @@
 # Benchmarks
 
+![Benchmark Results](./results.png)
+
+
 ## Request Latency
 
 ### Methodology
