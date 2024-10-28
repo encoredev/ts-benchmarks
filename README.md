@@ -2,6 +2,31 @@
 
 ![Benchmark Results](./results.png)
 
+## Instructions for benchmarking Encore
+
+To properly benchmark Encore in an apples-to-apples comparison with other frameworks,
+set the following environment variables:
+
+```bash
+export ENCORE_LOG=off  # to disable request logging
+export ENCORE_NOTRACE=1  # to disable request tracing
+export ENCORE_RUNTIME_LOG=debug  # to retrieve API server port information
+```
+
+Next, you must ensure to **not** benchmark the `4000` port that `encore run` uses by default,
+as this port goes through two layers of proxies (first the Encore daemon itself, and then the API Gateway).
+
+Instead, you should benchmark the port that the API server is listening on, which will be printed
+as a log statement when the Encore server starts up.
+
+For example:
+```bash
+$ ENCORE_LOG=off ENCORE_NOTRACE=1 ENCORE_RUNTIME_LOG=debug encore run
+[... more logs...]
+DBG encore_runtime_core::api::manager > api server listening for incoming requests addr=127.0.0.1:52680
+```
+
+In this case, you should benchmark against `http://127.0.0.1:52680`.
 
 ## Request Latency
 
